@@ -1,5 +1,5 @@
 /*2. Utilize uma lista como a que implementamos em sala de aula, com 50 slots;
-b. Crie uma outra função que garanta a inserção de números em ordem
+b. Crie uma outra funÃ§Ã£o que garanta a inserÃ§Ã£o de nÃºmeros em ordem
 decrescente. Inspire-se na letra anterior;*/
 
 #include <stdio.h>
@@ -20,11 +20,11 @@ void inserir_ordenado_dec(Lista **ref, int num){
 
     if(novo){
         novo->info = num;
-        // a lista está vazia?
+        // a lista estÃ¡ vazia?
         if(*ref == NULL){
             novo->prox = NULL;
             *ref = novo;
-        } // é o menor?
+        } // Ã© o menor?
         else if(novo->info > (*ref)->info){
             novo->prox = *ref;
             *ref = novo;
@@ -46,8 +46,8 @@ void imprimir(Lista *ref){
 	if(ref==NULL){
 		printf("Lista Vazia");
 	}else{
-		/*p = ao ponteiro que aponta para o começo da lista, enquanto ele não 
-		apontar pra nulo(fim) e pulando para o próximo nó*/
+		/*p = ao ponteiro que aponta para o comeÃ§o da lista, enquanto ele nÃ£o 
+		apontar pra nulo(fim) e pulando para o prÃ³ximo nÃ³*/
 		for(p=ref;p!=NULL;p=p->prox){
 			printf("%2d ",p->info);
 		}
@@ -60,11 +60,11 @@ int main(){
 	ref=criaLista();
 	
 	do{
-		printf("\nInsira um número na lista\n");
+		printf("\nInsira um nÃºmero na lista\n");
 		scanf("%d",&valor.info);
 		inserir_ordenado_dec(&ref,valor.info);
 		tam++;
-	}while(tam<5);
+	}while(tam<50);
 	imprimir(ref);
 	
 	
